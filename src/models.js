@@ -18,7 +18,7 @@ var selectModel = require('./views/selectmodel').initSelectModel;
 
 exports.getModels = function(token) {
   var viewContext = {
-    currentModel: 'en-US_BroadbandModel',
+    currentModel: 'es-ES_BroadbandModel',
     models: null,
     token: token,
     bufferSize: BUFFERSIZE

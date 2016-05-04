@@ -44,7 +44,7 @@ $(document).ready(function() {
 	if (!token) {
 	    console.error('No authorization token available');
 	    console.error('Attempting to reconnect...');
-	    
+
 	    if (err && err.code)
 		showError('Server error ' + err.code + ': '+ err.error);
 	    else
@@ -52,7 +52,7 @@ $(document).ready(function() {
 	}
 
 	var viewContext = {
-	    currentModel: 'en-US_BroadbandModel',
+	    currentModel: 'es-ES_BroadbandModel',
 	    models: models,
 	    token: token,
 	    bufferSize: BUFFERSIZE
@@ -63,22 +63,22 @@ $(document).ready(function() {
 
 	// Save models to localstorage
 	localStorage.setItem('models', JSON.stringify(models));
-    
+
 	//Check if playback functionality is invoked
 	localStorage.setItem('playbackON', false);
 	var query = window.location.search.substring(1);
 	var vars = query.split('&');
 	for(var i=0; i< vars.length; i++) {
 	    var pair = vars[i].split('=');
-	    if(decodeURIComponent(pair[0]) === 'debug') {   
+	    if(decodeURIComponent(pair[0]) === 'debug') {
 		localStorage.setItem('playbackON',decodeURIComponent(pair[1]));
 	    }
 	}
 
 	// Set default current model
-	localStorage.setItem('currentModel', 'en-US_BroadbandModel');
+	localStorage.setItem('currentModel', 'es-ES_BroadbandModel');
 	localStorage.setItem('sessionPermissions', 'true');
-    
+
 	getModels(token);
 
 	$.subscribe('clearscreen', function() {
